@@ -1,5 +1,6 @@
 <?php
-
+require_once "../config/database.php";
+session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $name = $_POST["name"];
     $email = $_POST["email"];
@@ -7,6 +8,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $password = $_POST["password"];
     $course = $_POST["course"];
 
+    // $sql = "INSERT INTO students (name, email, username, password, course) VALUES (? , ?, ?, ?, ? )";
+    // $sql = "INSERT INTO students (name, email, username, password, course) VALUES ('$name', '$email', '$username', '$password', '$course')";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sisss", $name, $email, $username, $password, $course);
+    $stmt ->execute();
+    echo "Student Added Successfully!<br>";
+    // header("Location: dashboard.php");
     echo $name . "<br>";
     echo $email . "<br>";
     echo $username . "<br>";
