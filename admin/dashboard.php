@@ -27,9 +27,11 @@
 <div>
     <h1><a href="students.php">all student</a></h1><br>
     <h1><a href="add-student.php">add students</a></h1><br>
+    <h1><a href="edit-student.php">edit students</a></h1><br>
     <h1>
         <a href="../auth/logout.php">Logout</a>
     </h1>
+
 </div>
 </body>
 </html>
