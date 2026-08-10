@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $password = $_POST["password"];
     $course = $_POST["course"];
 
-    // $sql = "INSERT INTO students (name, email, username, password, course) VALUES (? , ?, ?, ?, ? )";
+    $sql = "INSERT INTO students (name, email, username, password, course) VALUES (? , ?, ?, ?, ? )";
     // $sql = "INSERT INTO students (name, email, username, password, course) VALUES ('$name', '$email', '$username', '$password', '$course')";
 
     $stmt = $conn->prepare($sql);
@@ -56,7 +56,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         Course:
         <input type="text" name="course">
         <br><br>
-
+    
         <input type="submit" value="Add Student">
 
     </form>
