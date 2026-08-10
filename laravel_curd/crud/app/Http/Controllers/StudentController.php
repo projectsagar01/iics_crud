@@ -22,4 +22,7 @@ class StudentController extends Controller
         $student->delete();
         return redirect()->back();
     }
+    
+
+    
 }

@@ -83,5 +83,32 @@
 
 </table>
 
+<form action="/logout" method="POST">
+    @csrf
+
+    <button type="submit">
+        Logout
+    </button>
+</form>
+<form action="{{ route('students.store') }}"
+      method="POST"
+      enctype="multipart/form-data">
+
+    @csrf
+
+    <input type="text" name="name">
+
+    <input type="file" name="image">
+
+    <button type="submit">Save</button>
+    
+</form>
+
+<!-- @if($student->image)
+    <img src="{{ asset('storage/' . $student->image) }}"
+         width="100"
+         alt="Student">
+@endif -->
+
 </body>
 </html>
